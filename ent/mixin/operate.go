@@ -49,7 +49,7 @@ type DeleteBy struct {
 
 func (DeleteBy) Fields() []ent.Field {
 	return []ent.Field{
-		field.Bool("delete_fal").
+		field.Bool("delete_fla").
 			Comment("删除标识：0-正常，1-删除").
 			Default(false),
 		field.Uint32("delete_by").
