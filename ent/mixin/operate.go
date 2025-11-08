@@ -42,3 +42,23 @@ func (UpdatedBy) Fields() []ent.Field {
 			Nillable(),
 	}
 }
+
+type DeleteBy struct {
+	mixin.Schema
+}
+
+func (DeleteBy) Fields() []ent.Field {
+	return []ent.Field{
+		field.Bool("delete_fal").
+			Comment("删除标识：0-正常，1-删除").
+			Default(false),
+		field.Uint32("delete_by").
+			Comment("删除者ID").
+			Optional().
+			Nillable(),
+		field.Time("delete_time").
+			Comment("删除时间").
+			Optional().
+			Nillable(),
+	}
+}
